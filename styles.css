@@ -1,0 +1,361 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.container {
+  background: -webkit-radial-gradient(
+    top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  /* border: 1px solid red; */
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HEADER */
+header {
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 3rem auto 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.name-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 0.85;
+}
+
+.score {
+  background: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score p:nth-child(1) {
+  color: hsl(229, 64%, 46%);
+  font-size: 0.75rem;
+}
+
+.score p:not(:nth-child(1)) {
+  color: hsl(229, 25%, 31%);
+  font-size: 3rem;
+}
+
+/* GAME */
+.container-game {
+  /* border: 1px solid red; */
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container-game .paper,
+.container-game .scissors,
+.container-game .rock {
+  /* background: #fff;
+   */
+  cursor: pointer;
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 5px solid ; */
+}
+
+.container-game .paper {
+  background: linear-gradient(180deg, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  top: 30px;
+  left: 20px;
+  box-shadow: inset 0px -5px 3px hsl(230, 89%, 52%);
+}
+
+.container-game .rock {
+  background: linear-gradient(180deg, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: inset 0px -5px 3px hsl(349, 71%, 42%);
+  bottom: 60px;
+}
+
+.container-game .scissors {
+  background: linear-gradient(180deg, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: inset 0px -5px 3px hsl(39, 89%, 39%);
+  top: 30px;
+  right: 20px;
+}
+
+.img-container {
+  background: #fff;
+  box-shadow: inset 0px 5px 3px #c9c3c3;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container img {
+  width: 50%;
+}
+
+.triangle {
+  width: 60%;
+  /* z-index: 2; */
+}
+
+/* RULES */
+/* .rules {
+  border: 1px solid red;
+  display: flex;
+  justify-content: end;
+  bottom: 0;
+} */
+
+.rules {
+  /* border: 1px solid white; */
+  font-size: 0.5rem;
+  display: inline-flex;
+  background: none;
+  color: #fff;
+  padding: 0.25rem 1rem;
+  position: absolute;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 5px;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* RESULT GAME */
+.result-game {
+  /* border: 1px solid red; */
+  /* width: 60%; */
+  width: 600px;
+  height: 350px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.result-game .paper,
+.result-game .scissors,
+.result-game .rock {
+  position: relative;
+  z-index: 10;
+  cursor: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-game .paper {
+  background: linear-gradient(180deg, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: inset 0px -5px 3px hsl(230, 89%, 52%);
+}
+
+.result-game .rock {
+  background: linear-gradient(180deg, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: inset 0px -5px 3px hsl(349, 71%, 42%);
+}
+
+.result-game .scissors {
+  background: linear-gradient(180deg, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: inset 0px -5px 3px hsl(39, 89%, 39%);
+}
+
+.player-choice,
+.computer-choice {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: none;
+  height: 250px;
+  width: 200px;
+  position: relative;
+}
+
+.player-choice p,
+.computer-choice p {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+}
+
+.computer-choice {
+  position: relative;
+}
+
+.computer-choice .img-container .default-circle {
+  position: absolute;
+  background: hsl(237, 49%, 15%);
+  /* border: 1px solid red; */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  bottom: 25px;
+  /* transform: translateY(-50%); */
+}
+
+.retry {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.retry p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.retry button {
+  border: none;
+  font-size: 0.65rem;
+  padding: 0.4rem 1.75rem;
+  border-radius: 5px;
+  color: hsl(229, 25%, 31%);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay-container {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overlay {
+  background: #fff;
+  width: 400px;
+  height: 400px;
+  /* position: relative; */
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  /* padding: 1rem; */
+}
+
+.top p {
+  color: hsl(229, 25%, 31%);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.close-overlay {
+  cursor: pointer;
+  /* max-width: 20px;
+  height: 20px; */
+}
+.bounce {
+  border: 4px solid red;
+  position: absolute;
+}
+
+.circle {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.circle-one {
+  border: 30px solid #2b3652;
+  bottom: -30px;
+  height: 260px;
+  width: 260px;
+  animation: bounce 4s 1s infinite;
+  z-index: 3;
+}
+
+.circle-two {
+  border: 30px solid #222c46;
+  bottom: -60px;
+  height: 320px;
+  width: 320px;
+  animation: bounce 4s 1.5s infinite;
+  z-index: 2;
+}
+
+.circle-three {
+  border: 30px solid #1e2841;
+  bottom: -90px;
+  height: 380px;
+  width: 380px;
+  animation: bounce 4s 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
