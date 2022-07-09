@@ -67,7 +67,6 @@ function nextPartGame(e) {
     resultHTML.innerHTML = "YOU WIN";
   }
   setTimeout(() => {
-
     circle1.setAttribute("class", "circle circle-one");
     circle2.setAttribute("class", "circle circle-two");
     circle3.setAttribute("class", "circle circle-three");
@@ -82,6 +81,10 @@ function nextPartGame(e) {
       playerChoiceHTML.appendChild(circle3);
 
       // circle1.setAttribute("class", "circle-one");
+    } else {
+      circle1.removeAttribute("class");
+      circle2.removeAttribute("class");
+      circle3.removeAttribute("class");
     }
   }, 1000);
 
@@ -194,4 +197,4 @@ overlay.addEventListener("click", (e) => {
   console.log("overlay");
 });
 
-// 
+//
