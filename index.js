@@ -9,8 +9,14 @@ const overlayContainer = document.querySelector(".overlay-container");
 const overlay = document.querySelector(".overlay-container .overlay");
 const closeOverlay = document.querySelector(".close-overlay");
 const defaultCircle = document.querySelector(".default-circle");
+const resultGame = document.querySelector(".result-game");
+
+const circle1 = document.createElement("div");
+const circle2 = document.createElement("div");
+const circle3 = document.createElement("div");
 
 overlayContainer.style.display = "none";
+resultGame.style.display = "none";
 retry.style.display = "none";
 // retry.style.opacity = 0
 
@@ -31,7 +37,10 @@ buttons.forEach((button) => {
 });
 
 function nextPartGame(e) {
+  resultGame.style.display = "flex";
   const playerChoice = e.target.closest(".btn").classList[0];
+  const playerChoiceHTML = document.querySelector(".player-choice");
+  const computerChoiceHTML = document.querySelector(".computer-choice");
   const computerChoice = randomChoiceComputer();
   const result = gameResult(playerChoice, computerChoice);
   const playerChoiceResult = document.querySelector(
@@ -53,16 +62,28 @@ function nextPartGame(e) {
   } else if (result == "equality") {
     resultHTML.innerHTML = "EQUALITY";
   } else {
-    setTimeout(() => {
-      
-    })
+    setTimeout(() => {});
     score++;
     resultHTML.innerHTML = "YOU WIN";
   }
   setTimeout(() => {
 
+    circle1.setAttribute("class", "circle circle-one");
+    circle2.setAttribute("class", "circle circle-two");
+    circle3.setAttribute("class", "circle circle-three");
     scoreHTML.innerHTML = score;
-  }, 1000)
+    if (result == "loose") {
+      computerChoiceHTML.appendChild(circle1);
+      computerChoiceHTML.appendChild(circle2);
+      computerChoiceHTML.appendChild(circle3);
+    } else if (result == "win") {
+      playerChoiceHTML.appendChild(circle1);
+      playerChoiceHTML.appendChild(circle2);
+      playerChoiceHTML.appendChild(circle3);
+
+      // circle1.setAttribute("class", "circle-one");
+    }
+  }, 1000);
 
   switchDisplay();
   displayPlayerResult(playerChoiceResult, playerChoiceImg, playerChoice);
@@ -84,6 +105,10 @@ function nextPartGame(e) {
     containerGame.style.display = "flex";
     defaultCircle.style.display = "flex";
     retry.style.display = "none";
+    resultGame.style.display = "none";
+    circle1.removeAttribute("class");
+    circle2.removeAttribute("class");
+    circle3.removeAttribute("class");
 
     playerChoiceResult.classList.remove(playerChoice);
     computerChoiceResult.classList.remove(computerChoice);

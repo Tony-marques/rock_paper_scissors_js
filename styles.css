@@ -38,7 +38,7 @@ header {
   justify-content: center;
   color: #fff;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 0.85;
 }
 
@@ -54,22 +54,22 @@ header {
 
 .score p:nth-child(1) {
   color: hsl(229, 64%, 46%);
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .score p:not(:nth-child(1)) {
   color: hsl(229, 25%, 31%);
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 /* GAME */
 .container-game {
   /* border: 1px solid red; */
-  width: 350px;
-  height: 350px;
+  width: 600px;
+  height: 550px;
   margin: 0 auto;
-  margin-top: 3rem;
-  height: 60vh;
+  margin-top: 8rem;
+  /* height: 60vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,8 +83,8 @@ header {
    */
   cursor: pointer;
   position: absolute;
-  width: 130px;
-  height: 130px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -95,7 +95,7 @@ header {
 .container-game .paper {
   background: linear-gradient(180deg, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
   top: 30px;
-  left: 20px;
+  left: 30px;
   box-shadow: inset 0px -5px 3px hsl(230, 89%, 52%);
 }
 
@@ -109,7 +109,7 @@ header {
   background: linear-gradient(180deg, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
   box-shadow: inset 0px -5px 3px hsl(39, 89%, 39%);
   top: 30px;
-  right: 20px;
+  right: 30px;
 }
 
 .img-container {
@@ -129,7 +129,8 @@ header {
 }
 
 .triangle {
-  width: 60%;
+  width: 350px;
+  /* height: 450px; */
   /* z-index: 2; */
 }
 
@@ -143,11 +144,11 @@ header {
 
 .rules {
   /* border: 1px solid white; */
-  font-size: 0.5rem;
+  /* font-size: 0.5rem; */
   display: inline-flex;
   background: none;
   color: #fff;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1.5rem;
   position: absolute;
   border: 2px solid hsl(217, 16%, 45%);
   border-radius: 5px;
@@ -160,8 +161,8 @@ header {
 .result-game {
   /* border: 1px solid red; */
   /* width: 60%; */
-  width: 600px;
-  height: 350px;
+  width: 700px;
+  height: 450px;
   margin: 0 auto;
   margin-top: 3rem;
   height: 60vh;
@@ -177,8 +178,8 @@ header {
   position: relative;
   z-index: 10;
   cursor: auto;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -207,7 +208,7 @@ header {
   flex-direction: column;
   align-items: center;
   cursor: none;
-  height: 250px;
+  height: 350px;
   width: 200px;
   position: relative;
 }
@@ -217,6 +218,7 @@ header {
   color: #fff;
   margin-bottom: 2rem;
   font-weight: bold;
+  font-size: 1.5rem;
   position: relative;
   z-index: 10;
 }
@@ -254,7 +256,7 @@ header {
 
 .retry button {
   border: none;
-  font-size: 0.65rem;
+  font-size: 0.8remrem;
   padding: 0.4rem 1.75rem;
   border-radius: 5px;
   color: hsl(229, 25%, 31%);
@@ -320,29 +322,35 @@ header {
 }
 
 .circle-one {
-  border: 30px solid #2b3652;
-  bottom: -30px;
-  height: 260px;
-  width: 260px;
-  animation: bounce 4s 1s infinite;
+  border: 50px solid #2b3652;
+  bottom: -55px;
+  height: 400px;
+  width: 400px;
+  animation: bounce 4s 0.5s infinite;
   z-index: 3;
+  opacity: 0;
 }
 
 .circle-two {
-  border: 30px solid #222c46;
-  bottom: -60px;
-  height: 320px;
-  width: 320px;
-  animation: bounce 4s 1.5s infinite;
+  border: 50px solid #222c46;
+  bottom: -105px;
+  height: 500px;
+  width: 500px;
+  animation: bounce 4s 1s infinite;
   z-index: 2;
+  opacity: 0;
+
 }
 
 .circle-three {
-  border: 30px solid #1e2841;
-  bottom: -90px;
-  height: 380px;
-  width: 380px;
-  animation: bounce 4s 2s infinite;
+  border: 50px solid #1e2841;
+  bottom: -155px;
+  height: 600px;
+  width: 600px;
+  animation: bounce 4s 1.5s infinite;
+  z-index: 1;
+  opacity: 0;
+
 }
 
 @keyframes bounce {
