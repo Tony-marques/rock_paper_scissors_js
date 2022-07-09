@@ -28,8 +28,11 @@ header {
   display: flex;
   justify-content: space-between;
   width: 60%;
+  min-width: 400px;
   margin: 3rem auto 0 auto;
   padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 10;
 }
 
 .name-game {
@@ -234,7 +237,7 @@ header {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  bottom: 25px;
+  bottom: 50px;
   /* transform: translateY(-50%); */
 }
 
@@ -339,7 +342,6 @@ header {
   animation: bounce 4s 1s infinite;
   z-index: 2;
   opacity: 0;
-
 }
 
 .circle-three {
@@ -350,7 +352,6 @@ header {
   animation: bounce 4s 1.5s infinite;
   z-index: 1;
   opacity: 0;
-
 }
 
 @keyframes bounce {
@@ -368,3 +369,204 @@ header {
   }
 }
 /*  */
+
+@media only screen and (max-width: 815px) {
+  .computer-choice .img-container .default-circle {
+    bottom: 100px;
+  }
+
+  .result-game {
+    width: 600px;
+  }
+
+  .result-game .paper,
+  .result-game .scissors,
+  .result-game .rock {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-one {
+    bottom: 42px;
+    height: 300px;
+    width: 300px;
+  }
+
+  .circle-two {
+    bottom: -10px;
+    height: 400px;
+    width: 400px;
+  }
+
+  .circle-three {
+    bottom: -60px;
+    height: 500px;
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .computer-choice .img-container .default-circle {
+    top: 20px;
+    /* order: 1; */
+    /* position: relative; */
+    width: 100px;
+    height: 100px;
+  }
+
+  .retry {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+
+  .retry p {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .result-game {
+    width: 325px;
+    height: 450px;
+  }
+
+  .result-game .paper,
+  .result-game .scissors,
+  .result-game .rock {
+    width: 125px;
+    height: 125px;
+  }
+
+  .player-choice p,
+  .computer-choice p {
+    font-size: 1rem;
+    /* order: 2; */
+    margin-bottom: 0;
+    margin-top: 2rem;
+    position: absolute;
+    top: 125px;
+  }
+
+  .rules {
+    /* left: 50%; */
+    right: 50%;
+    bottom: 50px;
+    transform: translateX(50%);
+    font-size: 1rem;
+  }
+
+  .retry {
+    width: 100%;
+  }
+
+  .retry button {
+    /* font-size: 1.75rem; */
+    padding: 1rem 4rem;
+    font-weight: 600;
+    /* width: 80%; */
+  }
+
+  .container-game {
+    /* width: 400px; */
+    margin-top: 2rem;
+  }
+
+  .circle-one {
+    top: -50px;
+    height: 225px;
+    width: 225px;
+  }
+
+  .circle-two {
+    top: -100px;
+    height: 325px;
+    width: 325px;
+  }
+
+  .circle-three {
+    top: -150px;
+    height: 425px;
+    width: 425px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container-game {
+    width: 400px;
+    margin-top: 0rem;
+  }
+
+  .container-game .paper,
+  .container-game .scissors,
+  .container-game .rock {
+    /* background: #fff;
+   */
+    width: 150px;
+    height: 150px;
+  }
+
+  .container-game .paper {
+    top: 100px;
+  }
+
+  .container-game .scissors {
+    top: 100px;
+  }
+
+  .container-game .rock {
+    bottom: 120px;
+  }
+
+  .triangle {
+    width: 250px;
+  }
+
+  .overlay {
+    /* margin-left: 1rem; */
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  header {
+    /* margin: 0 auto; */
+    min-width: 320px;
+  }
+
+  .container-game {
+    width: 300px;
+    margin-top: 0rem;
+  }
+
+  .container-game .paper,
+  .container-game .scissors,
+  .container-game .rock {
+    /* background: #fff;
+   */
+    width: 130px;
+    height: 130px;
+  }
+
+  .container-game .paper {
+    top: 110px;
+    left: 0px;
+  }
+
+  .container-game .scissors {
+    top: 110px;
+    right: 0;
+  }
+
+  .container-game .rock {
+    bottom: 150px;
+  }
+
+  .triangle {
+    /* width: 200px; */
+  }
+
+  .overlay {
+    width: 320px;
+    height: 400px;
+  }
+}
